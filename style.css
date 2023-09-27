@@ -1,0 +1,98 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture{
+    max-width: 100%;
+    display:block;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 1.8rem;
+
+}
+
+.container {
+    max-width: 100rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.search-container {
+    display: flex;
+    height: 7rem;
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+.search-container > *{
+    height: 100%;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.search-container>input {
+    width: 30%;
+    border-radius: 10px;
+    border: 5px solid rgba(0, 106, 255, 0.915);
+   
+}
+
+.search-container>input:focus {
+    outline: none;
+    border-color: #fccb18;
+    box-shadow: 0 0 20px #fccb18;
+
+
+}
+
+.search-container>button {
+    padding: 0.5rem 1rem;
+    width: 10%;
+    border-radius: 10px;
+    border: 5px solid rgba(170, 0, 255, 0.915);
+}
+
+.search-container>button:hover {
+    cursor: pointer;
+    border-color: #fccb18;
+    box-shadow: 0 0 20px #fccb18;
+}
+
+.grid-container {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+}
+
+.picture-card {
+    aspect-ratio: 1 / 1.2;
+  
+}
+
+.stacked {
+    display: grid;
+}
+
+.picture-class {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    object-fit: cover;
+    
+    /* background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+/* img {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
