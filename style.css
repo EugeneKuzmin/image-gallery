@@ -14,7 +14,6 @@ picture{
 body{
     font-family: sans-serif;
     font-size: 1.8rem;
-
 }
 
 .container {
@@ -27,42 +26,68 @@ body{
     display: flex;
     height: 7rem;
     padding: 1rem 2rem;
-    gap: 1rem;
 }
 
-.search-container > *{
-    height: 100%;
-    font-family: inherit;
-    font-size: inherit;
-}
-
-.search-container>input {
+.input-box {
+    position: relative;
     width: 30%;
+    height: 100%;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { 
+display: none; 
+}
+
+#inptSearch {
     border-radius: 10px;
     border: 5px solid rgba(0, 106, 255, 0.915);
-   
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: inherit;
+    padding: 0 10rem 0 1rem;
 }
 
-.search-container>input:focus {
+#inptSearch:focus {
     outline: none;
-    border-color: #fccb18;
-    box-shadow: 0 0 20px #fccb18;
-
-
+    border-color: rgba(0, 106, 255, 0.915);;
+    box-shadow: 0 0 20px rgba(0, 106, 255, 0.915);
 }
 
-.search-container>button {
-    padding: 0.5rem 1rem;
-    width: 10%;
+.icon {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+.search-icon,
+.close-icon{
+    position: absolute;
+    top: 17%;
     border-radius: 10px;
-    border: 5px solid rgba(170, 0, 255, 0.915);
+    border: none;
+}
+.search-icon {
+    right:10px;
+}
+.close-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 80px;
+}
+.search-icon:hover,
+.close-icon:hover{
+    background-color: rgb(193, 193, 193);
+    cursor: pointer;
+    transition: .3s;
 }
 
-.search-container>button:hover {
-    cursor: pointer;
-    border-color: #fccb18;
-    box-shadow: 0 0 20px #fccb18;
-}
 
 .grid-container {
     display: grid;
