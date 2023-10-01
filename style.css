@@ -2,6 +2,7 @@
     /* colors */
     --clr-extra-light-gray: 0, 0%, 95%;
     --clr-dark: 0, 0%, 14%;
+    --clr-blue: 211, 100%, 54%;
     --ff-roboto: 'Roboto', sans-serif;;
 }
 
@@ -39,6 +40,11 @@
     margin-left: 1rem;
 }
 
+/* padding */
+.pl-3{
+    padding-left: 1.5rem;
+}
+
 img,
 picture{
     max-width: 100%;
@@ -55,9 +61,12 @@ body{
 }
 
 .container {
-    max-width: 100rem;
+    max-width: min(90vw,120rem);
     margin-inline: auto;
     padding-inline: 1rem;
+    padding-bottom: 0.8rem;
+    
+    
 }
 
 .search-container {
@@ -66,11 +75,13 @@ body{
     justify-content: space-between;
     height: 7rem;
     padding: 1rem 2rem;
+    border-bottom: 0.5rem solid rgb(68, 68, 68);
+    margin-bottom: 0.5rem;
 }
 
 .input-box {
     position: relative;
-    width: 30%;
+    min-width: min(30rem,100%);
     height: 100%;
 }
 
@@ -83,7 +94,7 @@ display: none;
 
 #inptSearch {
     border-radius: 10px;
-    border: 5px solid rgba(0, 106, 255, 0.915);
+    border: 5px solid hsl(var(--clr-blue));
     position: relative;
     height: 100%;
     width: 100%;
@@ -93,8 +104,7 @@ display: none;
 
 #inptSearch:focus {
     outline: none;
-    border-color: rgba(0, 106, 255, 0.915);;
-    box-shadow: 0 0 20px rgba(0, 106, 255, 0.915);
+    box-shadow: 0 0 20px hsl(var(--clr-blue));
 }
 
 .icon {
@@ -133,16 +143,21 @@ display: none;
     transition: .3s;
 }
 
-.custom-num {
+.input-num {
     display: flex;
     align-items: center;
-    border: 1px solid #1486ff;
+    border: 1px solid hsl(var(--clr-blue));
     border-radius: 3em;
-    transition: 0.2s;
+    margin-left: 1rem;
 }
 
-.custom-num > svg {
+.input-num > svg {
     cursor: pointer;
+}
+
+input[type="number"]{
+    max-width: 3rem;
+    border: none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -157,7 +172,6 @@ input[type="number"]{
 input[type="number"]:focus{
     outline: none;
 }
-
 
 .grid-container {
     display: grid;
@@ -174,14 +188,6 @@ input[type="number"]:focus{
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
-
-.picture-card.landscape {
-    grid-column: span 2;
-  }
-
-.picture-card.portrait {
-    grid-row: span 2;
-  }
 
 footer{
     container-type:inline-size;
@@ -202,4 +208,11 @@ footer a {
     background-color: white;
     width:10cqi;
 }
-
+@media (max-width: 60rem) {
+    .search-container {
+        flex-direction: column;
+        height: 11rem;
+        gap:0.5rem;
+        padding: 0.5rem;
+    }
+}

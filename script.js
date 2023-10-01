@@ -67,14 +67,21 @@ function initLoad(){
   getData('random')
 }
 
+pictureNumber.addEventListener('input',()=>{
+  if(pictureNumber.value>20||pictureNumber.value<1){
+    pictureNumber.value = 10
+
+  }
+})
+
 arrowLeft.addEventListener('click',
 ()=>{
-  if(pictureNumber.value>0) pictureNumber.value--
+  if(pictureNumber.value>1) pictureNumber.value--
 })
 
 arrowRight.addEventListener('click',
 ()=>{
-  if(pictureNumber.value<=20) pictureNumber.value++
+  if(pictureNumber.value<20) pictureNumber.value++
 })
 
 initLoad()
