@@ -21,13 +21,13 @@ async function getData(searchTxt) {
   const data = await res.json();
   gridContainer.innerHTML = ''
 
-  for (let pic = 0; pic <= pictureNumber.value; pic++) {
+  for (let pic = 0; pic < pictureNumber.value; pic++) {
       const card = document.createElement('div')
       const img = document.createElement('img')
       card.classList.add('picture-card');
       img.classList.add('picture-class')
       // Math.random()<0.5?card.classList.add('portrait'):card.classList.add('landscape')
-      img.src = data.results[pic].urls.small
+      img.src = data.results[pic].urls.regular
       card.appendChild(img)
       gridContainer.appendChild(card)
   }
