@@ -24,7 +24,7 @@ async function getData(searchTxt) {
   for (let pic = 0; pic < pictureNumber.value; pic++) {
       const card = document.createElement('div')
       const img = document.createElement('img')
-      card.classList.add('picture-card');
+      card.classList.add('picture-card')
       img.classList.add('picture-class')
       // Math.random()<0.5?card.classList.add('portrait'):card.classList.add('landscape')
       img.src = data.results[pic].urls.regular
